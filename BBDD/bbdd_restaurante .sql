@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 10:23 PM
+-- Generation Time: Sep 17, 2024 at 11:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -75,23 +75,24 @@ INSERT INTO `cliente` (`ID_CLIENTE`, `TIPO_CLIENTE`) VALUES
 
 CREATE TABLE `mesero` (
   `ID_MESERO` int(10) NOT NULL,
-  `NOMRE_MESERO` varchar(20) DEFAULT NULL
+  `NOMBRE_MESERO` varchar(20) DEFAULT NULL,
+  `CONTRASENA` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mesero`
 --
 
-INSERT INTO `mesero` (`ID_MESERO`, `NOMRE_MESERO`) VALUES
-(1, 'Alejandro\r'),
-(2, 'Ernesto\r'),
-(3, 'Joel\r'),
-(4, 'Mariana\r'),
-(5, 'Mauricio\r'),
-(6, 'Omar\r'),
-(7, 'Rodolfo\r'),
-(8, 'Saul\r'),
-(9, 'Valentina\r');
+INSERT INTO `mesero` (`ID_MESERO`, `NOMBRE_MESERO`, `CONTRASENA`) VALUES
+(1, 'Alejandro', '12345678\r'),
+(2, 'Ernesto', '12345678\r'),
+(3, 'Joel', '12345678\r'),
+(4, 'Mariana', '12345678\r'),
+(5, 'Mauricio', '12345678\r'),
+(6, 'Omar', '12345678\r'),
+(7, 'Rodolfo', '12345678\r'),
+(8, 'Saul', '12345678\r'),
+(9, 'Valentina', '12345678\r');
 
 -- --------------------------------------------------------
 
