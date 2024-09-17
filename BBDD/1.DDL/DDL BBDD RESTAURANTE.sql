@@ -1,7 +1,6 @@
 -- Instrucciones para creación de base de datos:
 -- 1. Ejecutar XAMPP
 -- 2. Crear conexión con la extensión, si no la tienen la extensión se llama MySQL
-
 -- Primero ejecutar esta línea!!
 CREATE DATABASE BBDD_RESTAURANTE    
     DEFAULT CHARACTER SET = 'utf8mb4';
@@ -10,8 +9,9 @@ CREATE DATABASE BBDD_RESTAURANTE
     
 CREATE TABLE MESERO (
     ID_MESERO INT(10) PRIMARY KEY AUTO_INCREMENT,
-    NOMRE_MESERO VARCHAR(20)
-); 
+    NOMBRE_MESERO VARCHAR(20),
+    CONTRASENA    VARCHAR(20)
+);  
 
 CREATE TABLE CLIENTE (
     ID_CLIENTE INT(10) PRIMARY KEY AUTO_INCREMENT,

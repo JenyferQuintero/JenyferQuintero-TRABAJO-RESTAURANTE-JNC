@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/formulario.js"></script>
+</head>
+
+<body>
+    <section class="form-main">
+        <div class="form-content">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="box">
+                <h3>Bienvenido</h3>
+                <form  method="post" action="indexorden.html" class="formulario" id="formulario">
+
+                    <!--usuario-->
+                    <div class="formulario__grupo" id="formulario__usuario">
+                        <input type="text" name="mesero" placeholder="Usuario" class="input-control" id="Usuario">
+                    </div>
+
+                    <!--contraseña-->
+                    <div class="formulario__grupo" id="formulario__password">
+                        <input type="text" name="id_mesero" placeholder="Contraseña" class="input-control" id="password">
+                        <div class="input-link">
+                            <a href="#" class="gradient-text">Has olvidado tu contraseña</a>
+                        </div>
+                    </div>
+
+                    <!--boton aceptar-->
+
+                    <div class="formulario__grupo" id="formulario__grupo--btn-enviar">             
+                        <button type="submit" class="btn">Aceptar</button>
+                </div>
+                  
+                </form>
+                <p>¿No tienes una cuenta? <a href="#" class="gradient-text">Crear cuenta</a></p>
+            </div>
+
+        </div>
+    </section>
+
+    </form>
+
+
+   <script>
+            
+
+(() => {
+    'use strict'
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+    </script>
+
+</body>
+
+</html>

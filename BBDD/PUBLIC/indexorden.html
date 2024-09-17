@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDEN</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/login.js"></script>
+</head>
+</head>
+<body>
+    
+    <h2 style="text-align: center;">Orden de Venta</h2>
+    
+    <form id="ordenVenta">
+        <table id="tablaVenta">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="producto1">Producto 1:</label>
+                        <input type="text" id="producto1" name="producto1" placeholder="Nombre del producto" required>
+                    </td>
+                    <td>
+                        <label for="precio1">Precio:</label>
+                        <input type="number" id="precio1" name="precio1" placeholder="Precio del producto" required>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="button" onclick="agregarFila()">Agregar producto</button>
+            <button type="submit">Enviar Orden</button>
+        </div>
+    </form>
+
+    <script>
+        let contador = 1;
+
+        function agregarFila() {
+            contador++;
+            let tabla = document.getElementById("tablaVenta").getElementsByTagName("tbody")[0];
+            let nuevaFila = tabla.insertRow();
+
+            // Columna para el producto
+            let celdaProducto = nuevaFila.insertCell(0);
+            celdaProducto.innerHTML = `<label for="producto${contador}">Producto ${contador}:</label>
+                                       <input type="text" id="producto${contador}" name="producto${contador}" placeholder="Nombre del producto" required>`;
+
+            // Columna para el precio
+            let celdaPrecio = nuevaFila.insertCell(1);
+            celdaPrecio.innerHTML = `<label for="precio${contador}">Precio:</label>
+                                     <input type="number" id="precio${contador}" name="precio${contador}" placeholder="Precio del producto" required>`;
+        }
+    </script>
+
+    
+    
+</body>
+</html>
