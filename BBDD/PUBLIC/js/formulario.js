@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('#input-control');
 
 const validaFormulario =(e) =>{
     switch (e.targert.name) {
-        case "usuario":
+        case "nombre_mesero":
             if(expresiones.usuario.test("e.target.value")){
                 document.getElementById('grupo__usuario').classList.remove('formulario__grupo-incorecto');
                 document.getElementById('grupo__usuario').classList.add('formulario__grupo-corecto');
@@ -16,7 +16,7 @@ const validaFormulario =(e) =>{
             }
         break;
 
-        case "password":
+        case "constrasena":
         break;
 
     }
