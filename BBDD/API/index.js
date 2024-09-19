@@ -2,11 +2,10 @@ const path = require('path')
 const express = require('express')
 const body_Parser = require('body-parser');
 const mysql2 = require('mysql2/promise');
-const { error } = require('console');
-
-
+const MySQL = require('./mysql')
 
 const app = express()
+const mySQL = new MySQL()
 const puerto = 3000
 
 app.use(express.static('public'));
@@ -32,9 +31,26 @@ const db = mysql2.createPool({
 
 })
 
+
+app.get('/obtenerInformacion', async (req, res) => {
+  try {
+    const meseros = await mySQL.executeQuery('SELECT * FROM Mesero')
+    const tipoCliente = await mySQL.executeQuery('SELECT * FROM Cliente')
+    const productos  = await mySQL.executeQuery('SELECT * FROM Producto')
+    res.json({
+      'meseros': meseros,
+      'tiposCliente': tipoCliente,
+      'productos': productos
+    })
+
+    
+  } catch (error) {
+    
+  }
+})
+
 app.post('/login', async (req, res) => {
   const { nombre_mesero, contrasena } = req.body
-  console.log(nombre_mesero, contrasena)
   try {
     const contrasena1 = parseInt(contrasena)
     const [filas] = await db.query('SELECT * FROM MESERO WHERE NOMBRE_MESERO=? AND CONTRASENA=?', [nombre_mesero, contrasena1])
@@ -54,17 +70,39 @@ app.post('/login', async (req, res) => {
 /*orden*/
 
 app.post('/agregar-producto',async (req, res) => {
-  const { producto_nombre,precio } = req.body;
-  console.log(producto_nombre, precio)
   try {
-   
-    const [filas] = await db.query('SELECT * FROM PRODUCTO WHERE PRODUCTO_NOMBRE=? AND PRECIO=?', [producto_nombre, precio])
-    console.log(rows)
-    res.send('Oden de compra generada con exito');
-      }
-      catch(error){
-          console.error('Error de datos', error)
-      }
+    const { mesero, mesa, tipoCliente, producto_nombre } = req.body;
+    const fecha = new Date()
+    // const mesaInt = parseInt(mesa)
+    const propina = 0.10
+    const resultadoOrden = await mySQL.executeQuery('INSERT INTO Orden(FECHA_HORA, MESA, PROPINA, ID_MESERO, ID_CLIENTE) VALUES (?,?,?,?,?)', [fecha, mesa, propina, mesero, tipoCliente])
+    const ordenId = resultadoOrden.insertId
+    await mySQL.executeQuery('INSERT INTO Orden_Producto(ID_ORDEN, ID_PRODUCTO) VALUES (?,?)', [ordenId, producto_nombre])
+
+    const resultadoFinal = await mySQL.executeQuery(`
+    SELECT 
+        Orden.Id_Orden AS id,
+        Orden.Fecha_Hora AS Fecha,
+        Orden.Mesa AS mesa,
+        Orden.Propina AS propina,
+        Mesero.Nombre_Mesero AS mesero,
+        Cliente.Tipo_Cliente AS tipo_de_cliente,
+        producto.Producto_Nombre AS producto
+    FROM 
+        Orden
+    INNER JOIN Mesero ON Orden.Id_Mesero = Mesero.ID_Mesero
+    INNER JOIN orden_producto on orden.Id_orden= orden_producto.Id_Orden
+    INNER join producto on orden_producto.ID_producto = producto.ID_producto
+    INNER JOIN Cliente ON Orden.ID_cliente = Cliente.id_cliente 
+    WHERE Orden.ID_orden= ${ordenId}`)
+
+    res.json({
+      ordenGenerada: resultadoFinal
+    })
+    }
+    catch(error){
+        console.error('Error de datos', error)
+    }
 
 }) 
 

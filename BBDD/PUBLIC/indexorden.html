@@ -20,7 +20,7 @@
 
     <section class="form-main">
 
-        <form action="http://localhost:3000/agregar-producto" method="post" class="formulario" id="formulario">
+        <form action="/agregar-producto" method="post" class="formulario" id="formulario">
 
             <p id="fecha" class="tiempo">Fecha: </p>
             <p id="hora" class="tiempo">Hora: </p>
@@ -36,37 +36,34 @@
                     <label for="mesa">Mesa:</label>
                     <select id="mesa" name="mesa" required>
                         <option value=""></option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                        <option value="">11</option>
-                        <option value="">12</option>
-                        <option value="">13</option>
-                        <option value="">14</option>
-                        <option value="">15</option>
-                        <option value="">16</option>
-                        <option value="">17</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
                     </select>
                     <br><br>
 
                     <!-- Selector para Tipo de Cliente -->
                     <label for="tipoCliente">Tipo de Cliente:</label>
-                    <select id="tipoCliente" name="tipoCliente" required>
-                        <option value=""></option>
-                        <option value="">Cliente Nuevo</option>
-                        <option value="">Cliente Repetido</option>
-
-                    </select>
+                    <select id="tipoCliente" name="tipoCliente" required></select>
                 </div>
             </div>
-
+            <label for="mesero">Mesero</label>
+            <select id="mesero" name="mesero" required></select>
+            
 
             <table id="tablaVenta">
 
@@ -75,76 +72,6 @@
                         <td>
                             <label for="producto_nombre">Producto:</label>
                             <select id="producto_nombre" name="producto_nombre" required>
-                                <option value=""></option>
-                                <option value="">Arrachera del Chef</option>
-                                <option value="">Atún Encostrado</option>
-                                <option value="">Brochetas Hawaiianas</option>
-                                <option value="">Café americano</option>
-                                <option value="">Camarones al Coco</option>
-                                <option value="">Camarones Momia</option>
-                                <option value="">Capuccino</option>
-                                <option value="">Cítricos</option>
-                                <option value="">Corona</option>
-                                <option value="">Del Cheff</option>
-                                <option value="">Del Huerto</option>
-                                <option value="">Ensalada Prímula</option>
-                                <option value="">Esfera del Cheff</option>
-                                <option value="">Espárragos Envueltos</option>
-                                <option value="">Espresso</option>
-                                <option value="">Frutos del Bosque</option>
-                                <option value="">Indio</option>
-                                <option value="">Italiana</option>
-                                <option value="">Lasagna Ratatouille</option>
-                                <option value="">Limonada</option>
-                                <option value="">Margarita</option>
-                                <option value="">Margret de Pato</option>
-                                <option value="">Mejillones Horneados</option>
-                                <option value="">Mexicana</option>
-                                <option value="">Minerva</option>
-                                <option value="">Modelo</option>
-                                <option value="">Naranjada</option>
-                                <option value="">Pacifico</option>
-                                <option value="">Pan de Elote</option>
-                                <option value="">Panela a la Leña</option>
-                                <option value="">Pannacotta Vainilla y Café</option>
-                                <option value="">Pasta 4 Quesos</option>
-                                <option value="">Pasta Alfredo</option>
-                                <option value="">Pasta de Tomate Deshidratado</option>
-                                <option value="">Pay de Temporada</option>
-                                <option value="">Pera Rostizada</option>
-                                <option value="">Pesto & Camarón</option>
-                                <option value="">Pizza Prímula</option>
-                                <option value="">Pollo al Pastor</option>
-                                <option value="">Pollo Silvestre</option>
-                                <option value="">Portobello Confitado</option>
-                                <option value="">Prímula Espresso</option>
-                                <option value="">Quesadillas Gobernador</option>
-                                <option value="">Refresco</option>
-                                <option value="">Rollos Prímula</option>
-                                <option value="">Salmón</option>
-                                <option value="">Salmón Ahumado</option>
-                                <option value="">Salmón al Pesto</option>
-                                <option value="">Strudel de Manzana</option>
-                                <option value="">Tacos Arrachera</option>
-                                <option value="">Tacos Capeados</option>
-                                <option value="">Tártara de atún/salmón Frescto</option>
-                                <option value="">Te helado</option>
-                                <option value="">Tecate</option>
-                                <option value="">Tiramisú</option>
-                                <option value="">Tisana</option>
-                                <option value="">Tropical</option>
-                                <option value="">Vacío</option>
-                                <option value="">Victoria</option>
-                                <option value="">Vino 1</option>
-                                <option value="">Vino 2</option>
-                                <option value="">Vino 3</option>
-                                <option value="">Vino 4</option>
-                                <option value="">Vino 5</option>
-                                <option value="">Vino 6</option>
-                                <option value="">Vino 7</option>
-                                <option value="">Vino 8</option>
-                                <option value="">Vino 9</option>
-                                <option value="">Vino 10</option>
                             </select>
 
                         </td>
@@ -161,6 +88,7 @@
             </div>
         </form>
     </section>
+    <script src="./js/script.js"></script>
     <script>
         // Función para actualizar la fecha y hora
         function actualizarFechaHora() {
