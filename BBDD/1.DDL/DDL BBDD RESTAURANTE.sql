@@ -4,6 +4,9 @@
 -- Primero ejecutar esta línea!!
 CREATE DATABASE BBDD_RESTAURANTE    
     DEFAULT CHARACTER SET = 'utf8mb4';
+
+
+
  USE BBDD_RESTAURANTE;
     
 CREATE TABLE MESERO (

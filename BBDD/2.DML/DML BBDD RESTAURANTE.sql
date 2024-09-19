@@ -5,7 +5,7 @@
 -- 2. Copiar y pegar carpeta de Carga Masiva ubicada en el repositorio en la siguiente ruta: C:\xampp\mysql\data
         USE BBDD_RESTAURANTE;
 
-        -- Script para borrar datos de las tablas en caso de que la tabla ya cuente con registros
+    -- Script para borrar datos de las tablas en caso de que la tabla ya cuente con registros
 
 DELETE FROM PRODUCTO;
 DELETE FROM ORDEN;
@@ -79,5 +79,5 @@ FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES
-(ID_ORDEN, ID_PRODUCTO);
+(ID_ORDEN, ID_PRODUCTO);  
 
