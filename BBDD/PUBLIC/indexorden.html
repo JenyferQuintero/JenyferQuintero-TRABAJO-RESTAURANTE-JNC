@@ -16,77 +16,79 @@
 
 <body>
 
-    <h2 style="text-align: center;">Orden de Venta</h2>
-
     <section class="form-main">
+        <div class="form-content">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="box">
+                <h3>Pedido</h3>
 
-        <form action="/agregar-producto" method="post" class="formulario" id="formulario">
+                <form action="/agregar-producto" method="post" class="formulario" id="formulario">
 
-            <p id="fecha" class="tiempo">Fecha: </p>
-            <p id="hora" class="tiempo">Hora: </p>
+                    <!--usuario-->
+                    <p id="fecha" class="tiempo">Fecha: </p>
+                    <p id="hora" class="tiempo">Hora: </p>
 
+                    <div class="formulario__grupo" id="formulario__usuario">
+                        <!-- Campo para la Mesa -->
+                        <label for="mesa">Mesa:</label>
+                        <select id="mesa" name="mesa" required>
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                        </select>
+                        <br><br>
 
-            <h1>Formulario de Pedido</h1>
+                        <!-- Selector para Tipo de Cliente -->
+                        <label for="tipoCliente">Tipo de Cliente:</label>
+                        <select id="tipoCliente" name="tipoCliente" required></select>
+                        <br><br>
 
+                        <label for="mesero">Mesero</label>
+                        <select id="mesero" name="mesero" required></select>
 
-            <div class="form-content">
+                    </div>
+                    <table id="tablaVenta">
 
-                <div class="formulario__grupo" id="formulario__usuario">
-                    <!-- Campo para la Mesa -->
-                    <label for="mesa">Mesa:</label>
-                    <select id="mesa" name="mesa" required>
-                        <option value=""></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                    </select>
-                    <br><br>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="producto_nombre">Producto:</label>
+                                    <select id="producto_nombre" name="producto_nombre" required>
+                                    </select>
 
-                    <!-- Selector para Tipo de Cliente -->
-                    <label for="tipoCliente">Tipo de Cliente:</label>
-                    <select id="tipoCliente" name="tipoCliente" required></select>
-                </div>
+                                </td>
+                                <td>
+                                    <label for="precio">Precio:</label>
+                                    <input type="number" id="precio" name="precio" placeholder="Precio del producto"
+                                        required>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="formulario__grupo" id="formulario__grupo--btn-enviar">
+                        <button type="button" onclick="agregarFila()" class="btn" >Agregar producto</button>
+                        <br><br>
+                        <button type="submit" class="btn" >Enviar Orden</button>
+                    </div>
+                </form>
             </div>
-            <label for="mesero">Mesero</label>
-            <select id="mesero" name="mesero" required></select>
-            
-
-            <table id="tablaVenta">
-
-                <tbody>
-                    <tr>
-                        <td>
-                            <label for="producto_nombre">Producto:</label>
-                            <select id="producto_nombre" name="producto_nombre" required>
-                            </select>
-
-                        </td>
-                        <td>
-                            <label for="precio">Precio:</label>
-                            <input type="number" id="precio" name="precio" placeholder="Precio del producto" required>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="text-align: center; margin-top: 20px;">
-                <button type="button" onclick="agregarFila()">Agregar producto</button>
-                <button type="submit">Enviar Orden</button>
-            </div>
-        </form>
     </section>
     <script src="./js/script.js"></script>
     <script>
